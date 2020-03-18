@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainScreen.Profile.Settings.AuthenticationActivity">
+
+    <TextView
+        android:id="@+id/TvAuthentication"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:textSize="14sp"
+        android:text="@string/authentication"
+        android:textColor="#B2FAF4F4"/>
+
+    <TextView
+        android:id="@+id/TvPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:hint="Phone Number"
+        android:inputType="number"
+        android:layout_marginBottom="@dimen/pv_pin_view_item_line_width"
+        android:drawableEnd="@drawable/ic_info"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorLightGray"
+        android:layout_below="@+id/TvAuthentication"/>
+
+    <View
+        android:id="@+id/View"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#66A19595"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_below="@+id/TvPhoneNumber"/>
+
+    <Switch
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Enable 2FA"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:background="#1DFFFFFF"
+        android:textColor="@color/colorLightGray"
+        android:layout_below="@+id/View"/>
+
+</RelativeLayout>

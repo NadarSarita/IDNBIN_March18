@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/TvCurrentSession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:text="Current session"
+        android:textSize="12sp"
+        android:textColor="@color/colorLightGray"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#1DFFFFFF"
+        android:layout_marginTop="14dp">
+
+        <ImageView
+            android:id="@+id/IvIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_android"/>
+
+        <TextView
+            android:id="@+id/TvAppVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IDNBIN Android 6.9.0"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:textSize="14sp"
+            android:textColor="@color/colorWhite"
+            android:layout_toRightOf="@+id/IvIcon"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Online"
+            android:textSize="12sp"
+            android:textColor="@color/colorGradGreen"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_alignParentEnd="true"/>
+
+        <TextView
+            android:id="@+id/TvSmartPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/IvIcon"
+            android:layout_marginLeft="12dp"
+            android:textSize="12sp"
+            android:textColor="@color/colorLightGray"
+            android:text="Generic Smartphone (Android)"
+            android:layout_below="@+id/TvAppVersion"/>
+
+        <TextView
+            android:id="@+id/TvIpAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/IvIcon"
+            android:layout_marginLeft="12dp"
+            android:textSize="12sp"
+            android:textColor="@color/colorLightGray"
+            android:text="49.33.223.200"
+            android:layout_below="@+id/TvSmartPhone"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="12sp"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp"
+            android:text="TERMINATE ALL OTHER SESSIONS"
+            android:textColor="@color/colorSell"
+            android:layout_toRightOf="@+id/IvIcon"
+            android:layout_below="@+id/TvIpAdd"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/TvActiveSession"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="14dp"
+        android:text="Active sessions"
+        android:textSize="12sp"
+        android:textColor="@color/colorLightGray"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Rvactivesessions"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="#1DFFFFFF"
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/IvIcon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_android"/>
+
+        <TextView
+            android:id="@+id/TvAppVer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IDNBIN Android"
+            android:textSize="14sp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/colorWhite"
+            android:layout_toRightOf="@+id/IvIcon2"/>
+
+        <TextView
+            android:id="@+id/TvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="14:44, 13:03"
+            android:textSize="12sp"
+            android:textColor="@color/colorLightGray"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_alignParentEnd="true"/>
+
+        <TextView
+            android:id="@+id/TvSmartP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/IvIcon2"
+            android:layout_marginLeft="12dp"
+            android:textSize="12sp"
+            android:textColor="@color/colorLightGray"
+            android:text="Generic Smartphone (Android)"
+            android:layout_below="@+id/TvAppVer"/>
+
+        <TextView
+            android:id="@+id/TvIpAd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/IvIcon2"
+            android:layout_marginLeft="12dp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/colorLightGray"
+            android:text="103.216.212.18"
+            android:textSize="12sp"
+            android:layout_below="@+id/TvSmartP"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/TvTime"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

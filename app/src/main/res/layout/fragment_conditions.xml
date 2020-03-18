@@ -1,0 +1,312 @@
+<ScrollView xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorWhiteTransparent"
+    android:layout_marginBottom="1dp"
+    tools:context=".info.ConditionsFragment"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+        <TextView
+            android:id="@+id/tv_INVEST"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/colorLightGray"
+            android:text="MIN INVEST"/>
+
+        <TextView
+            android:id="@+id/tv_SPRED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/colorLightGray"
+            android:layout_below="@id/tv_INVEST"
+            android:text="SPRED"/>
+
+        <TextView
+            android:id="@+id/tv_TIME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp"
+            android:layout_below="@+id/tv_LEVERAGE"
+            android:textColor="@color/colorLightGray"
+            android:text="EXP.TIME"/>
+
+        <TextView
+            android:id="@+id/tv_LEVERAGE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp"
+            android:layout_below="@+id/tv_SPRED"
+            android:textColor="@color/colorLightGray"
+            android:text="LEVERAGE"/>
+
+        <TextView
+            android:id="@+id/tv_COMMISSION"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginBottom="4dp"
+            android:layout_below="@+id/tv_TIME"
+            android:textColor="@color/colorLightGray"
+            android:text="COMMISSION"/>
+
+        <TextView
+            android:id="@+id/tv_INVEST_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-$0.285"
+            android:textSize="10sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentEnd="true"/>
+
+        <TextView
+            android:id="@+id/tv_SPRED_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0.0000%"
+            android:textSize="10sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/colorWhite"
+            android:layout_below="@id/tv_INVEST_value"
+            android:layout_alignParentEnd="true"/>
+
+        <TextView
+            android:id="@+id/tv_LEVERAGE_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="up to x20"
+            android:textSize="10sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/colorWhite"
+            android:layout_below="@id/tv_SPRED_value"
+            android:layout_alignParentEnd="true"/>
+
+        <TextView
+            android:id="@+id/tv_ExpirationTime_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" - "
+            android:textSize="10sp"
+            android:layout_marginBottom="8dp"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/tv_LEVERAGE_value"/>
+
+        <TextView
+            android:id="@+id/tv_COMMISSION_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Free"
+            android:textSize="10sp"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/tv_ExpirationTime_value"/>
+
+
+        <TextView
+            android:id="@+id/TvOverFunding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textSize="12sp"
+            android:text="OVERNIGHT FUNDING"
+            android:textColor="@color/colorLightGray"
+            android:layout_below="@+id/tv_COMMISSION"/>
+
+
+        <TextView
+            android:id="@+id/TvDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TODAY"
+            android:textSize="12sp"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/tv_COMMISSION_value"/>
+
+        <TextView
+            android:id="@+id/TvBuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="BUY"
+            android:textSize="12sp"
+            android:textColor="@color/colorLightGray"
+            android:layout_below="@+id/TvOverFunding"/>
+
+        <TextView
+            android:id="@+id/TvBuyValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-0.264%"
+            android:textSize="10sp"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/TvDay"/>
+
+        <TextView
+            android:id="@+id/TvSell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="SELL"
+            android:textSize="12sp"
+            android:textColor="@color/colorLightGray"
+            android:layout_below="@+id/TvBuy"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-0.0204%"
+            android:textSize="10sp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:textColor="@color/colorWhite"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/TvBuyValue"/>
+
+        <View
+            android:id="@+id/View"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="14dp"
+            android:layout_below="@+id/TvSell"
+            android:background="@color/colorLightGray"/>
+
+        <TextView
+            android:id="@+id/TvSchedule"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/View"
+            android:text="SCHEDULE"
+            android:textSize="12sp"
+            android:textColor="@color/colorLightGray"
+            android:layout_marginTop="14dp"/>
+
+        <TextView
+            android:id="@+id/TvTimezone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/View"
+            android:text="(GMT+05:30)"
+            android:textSize="12sp"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@+id/TvSchedule"
+            android:textColor="@color/colorLightGray"
+            android:layout_marginTop="14dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RvSchedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/TvSchedule"/>
+
+        <View
+            android:id="@+id/View2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginTop="8dp"
+            android:layout_below="@+id/RvSchedule"
+            android:background="@color/colorLightGray"/>
+
+        <TextView
+            android:id="@+id/TvOvernightFunding"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OVERNIGHT FUNDING"
+            android:textColor="@color/colorLightGray"
+            android:layout_marginTop="14dp"
+            android:textSize="12sp"
+            android:layout_below="@+id/View2"/>
+
+        <LinearLayout
+            android:id="@+id/LlOvernightFunding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/TvOvernightFunding">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="DATE"
+                android:textSize="12sp"
+                android:textColor="@color/colorLightGray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:text="TIME"
+                android:textColor="@color/colorLightGray"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:text="SELL"
+                android:textColor="@color/colorLightGray"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="12sp"
+                android:text="BUY"
+                android:textColor="@color/colorLightGray"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/RvOvernightFunding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_below="@+id/LlOvernightFunding"/>
+
+        <TextView
+            android:id="@+id/TvOvernightFundingDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textSize="10sp"
+            android:textColor="@color/colorLightGray"
+            android:layout_below="@+id/RvOvernightFunding"/>
+
+        <TextView
+            android:id="@+id/TvPositiveOvernightFundingDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="12dp"
+            android:textSize="10sp"
+            android:textColor="@color/colorLightGray"
+            android:layout_below="@+id/TvOvernightFundingDesc"/>
+
+    </RelativeLayout>
+
+</ScrollView>
+
+

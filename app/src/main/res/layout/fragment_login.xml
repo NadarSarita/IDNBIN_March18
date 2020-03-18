@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".LoginRegister.FragmentLogin">
+
+        <TextView
+            android:id="@+id/TvEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Email"
+            android:textColor="@color/color_text_grey"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/EtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TvEmail"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_edittext"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/colorPrimary"
+            android:textCursorDrawable="@null"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/TvPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/EtEmail"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:text="Password"
+            android:textColor="@color/color_text_grey"
+            android:textSize="12sp" />
+
+        <EditText
+            android:id="@+id/EtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvPassword"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/bg_edittext"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:singleLine="true"
+            android:textColor="@color/colorPrimary"
+            android:textCursorDrawable="@null"
+            android:textSize="12sp" />
+
+        <CheckBox
+            android:id="@+id/CbShowPwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/EtPassword"
+            android:layout_marginStart="20dp"
+            android:buttonTint="@color/colorWhite"
+            android:text="Show Password"
+            android:textColor="@color/color_text_grey"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/TvForgotPwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/EtPassword"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="5dp"
+            android:text="Forgot password?"
+            android:textColor="@color/color_text_grey"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/BtnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/TvForgotPwd"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="12sp"
+            android:background="@drawable/bg_grey_rounded"
+            android:text="Login"
+            android:textColor="@color/color_text_black" />
+
+        <TextView
+            android:id="@+id/TvRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/BtnLogin"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="---- OR ----"
+            android:textAlignment="center"
+            android:textColor="@color/color_text_white" />
+
+        <LinearLayout
+            android:id="@+id/SignInOptions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvRegister"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rounded_transparent">
+
+                <TextView
+                    android:id="@+id/TvFb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableStart="@drawable/ic_facebook"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical|center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="Facebook"
+                    android:textColor="@color/color_text_white"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rounded_transparent">
+
+                <TextView
+                    android:id="@+id/TvGoogle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawableStart="@drawable/ic_google"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_vertical|center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="Google"
+                    android:textColor="@color/color_text_white"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TvPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SignInOptions"
+            android:layout_centerInParent="true"
+            android:background="@drawable/bg_rounded_transparent"
+            android:drawableStart="@drawable/ic_phone"
+            android:drawableLeft="@drawable/ic_phone"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:paddingStart="25dp"
+            android:paddingTop="8dp"
+            android:paddingEnd="25dp"
+            android:paddingBottom="8dp"
+            android:text="Phone Login"
+            android:textColor="@color/color_text_white"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+</ScrollView>

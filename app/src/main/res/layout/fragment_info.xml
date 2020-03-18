@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/RlFirst"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+
+        <TextView
+            android:id="@+id/TvValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="0.8921030"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/TvAudCad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvValue"
+            android:text="AUD/CAD"
+            android:textColor="@color/colorLightGray"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/TvAudCadValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvValue"
+            android:layout_marginStart="4dp"
+            android:layout_toEndOf="@+id/TvAudCad"
+            android:text="+0.004%"
+            android:textColor="@color/colorSell"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/Tvbell"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_toStartOf="@+id/Tvstar"
+            android:background="@drawable/ic_bell" />
+
+        <TextView
+            android:id="@+id/Tvstar"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/ic_star" />
+
+        <View
+            android:id="@+id/View"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/TvAudCadValue"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorLightGray" />
+
+
+        <TextView
+            android:id="@+id/TvtraderSentiment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/View"
+            android:layout_marginTop="12dp"
+            android:text="TRADERS' SENTIMENT"
+            android:textColor="@color/colorLightGray"
+            android:textSize="12sp" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/SbTrader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/TvtraderSentiment"
+            android:layout_marginTop="4dp"
+            android:maxHeight="3dip"
+            android:minHeight="3dip" />
+
+        <TextView
+            android:id="@+id/TvPut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SbTrader"
+            android:layout_marginTop="4dp"
+            android:text="Put 31%"
+            android:textColor="@color/colorSell"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/TvCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SbTrader"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:text="Put 31%"
+            android:textColor="@color/colorGradGreen"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/TvLiveStatistics"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvCall"
+            android:layout_marginTop="12dp"
+            android:text="LIVE STATISTICS"
+            android:textColor="@color/colorLightGray"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/TvMinutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvLiveStatistics"
+            android:layout_marginTop="12dp"
+            android:text="5 MINUTES"
+            android:textColor="@color/colorLightGray"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/TvLow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvLiveStatistics"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@+id/TvMinutes"
+            android:text="LOW"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/TvHigh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvLiveStatistics"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="4dp"
+            android:text="HIGH"
+            android:textColor="@color/colorWhite"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/TvMinutesValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvMinutes"
+            android:text="-0.007%"
+            android:textColor="@color/colorSell"
+            android:textSize="10sp" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/SbMinutes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvLow"
+            android:layout_marginStart="48dp"
+            android:layout_toEndOf="@id/TvMinutesValue"
+            android:maxHeight="3dip"
+            android:minHeight="3dip" />
+
+        <TextView
+            android:id="@+id/TvMnValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SbMinutes"
+            android:layout_marginStart="60dp"
+            android:layout_toEndOf="@id/TvMinutesValue"
+            android:text="0.8920632.89216408"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/TvHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvMnValue"
+            android:layout_marginTop="12dp"
+            android:text="1 HOUR"
+            android:textColor="@color/colorLightGray"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/TvHourValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvHour"
+            android:text="-0.037%"
+            android:textColor="@color/colorSell"
+            android:textSize="10sp" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/SbHour"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvHour"
+            android:layout_marginStart="48dp"
+            android:layout_toEndOf="@id/TvHourValue"
+            android:maxHeight="3dip"
+            android:minHeight="3dip" />
+
+        <TextView
+            android:id="@+id/TvHrValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SbHour"
+            android:layout_marginStart="60dp"
+            android:layout_toEndOf="@id/TvHourValue"
+            android:text="0.892063002.89216408"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/TvDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvHrValue"
+            android:layout_marginTop="12dp"
+            android:text="1 DAY"
+            android:textColor="@color/colorLightGray"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/TvDayValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvDay"
+            android:text="+0.004%"
+            android:textColor="@color/colorGradGreen"
+            android:textSize="10sp" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/SbDay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvDay"
+            android:layout_marginStart="48dp"
+            android:layout_toEndOf="@id/TvHourValue"
+            android:maxHeight="3dip"
+            android:minHeight="3dip" />
+
+        <TextView
+            android:id="@+id/TvDValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SbDay"
+            android:layout_marginStart="60dp"
+            android:layout_toEndOf="@id/TvDayValue"
+            android:text="0.89206300.892164088"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/TvWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvDValue"
+            android:layout_marginTop="12dp"
+            android:text="1 WEEK"
+            android:textColor="@color/colorLightGray"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/TvWeekValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvWeek"
+            android:text="+0.004%"
+            android:textColor="@color/colorGradGreen"
+            android:textSize="10sp" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/SbWeek"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvWeek"
+            android:layout_marginStart="48dp"
+            android:layout_toEndOf="@id/TvWeekValue"
+            android:maxHeight="3dip"
+            android:minHeight="3dip" />
+
+        <TextView
+            android:id="@+id/TvWkValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SbWeek"
+            android:layout_marginStart="60dp"
+            android:layout_toEndOf="@id/TvWeekValue"
+            android:text="0.89206300.8921640"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/TvMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvWkValue"
+            android:layout_marginTop="12dp"
+            android:text="1 MONTH"
+            android:textColor="@color/colorLightGray"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/TvMonthValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvMonth"
+            android:text="+0.004%"
+            android:textColor="@color/colorGradGreen"
+            android:textSize="10sp" />
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/SbMonth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvMonth"
+            android:layout_marginStart="48dp"
+            android:layout_toEndOf="@id/TvMonthValue"
+            android:maxHeight="3dip"
+            android:minHeight="3dip" />
+
+        <TextView
+            android:id="@+id/TvMthValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/SbMonth"
+            android:layout_marginStart="60dp"
+            android:layout_toEndOf="@id/TvMonthValue"
+            android:text="0.89206302.89216408"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp" />
+
+        <View
+            android:id="@+id/View2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/TvMthValue"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorLightGray" />
+
+        <TextView
+            android:id="@+id/TvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/View2"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/TvBase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvDescription"
+            android:layout_marginTop="16dp"
+            android:text="BASE"
+            android:textColor="@color/colorLightGray"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/TvAud"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvDescription"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="16dp"
+            android:text="AUD"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/TvSecond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvBase"
+            android:layout_marginTop="4dp"
+            android:text="BASE"
+            android:textColor="@color/colorLightGray"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/TvCad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvAud"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="4dp"
+            android:text="CAD"
+            android:textColor="@color/colorWhite"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TvSecond"
+            android:layout_marginTop="16dp"
+            android:drawableStart="@drawable/external_link"
+            android:drawablePadding="4dp"
+            android:text="Full Information"
+            android:textColor="@color/colorWhite" />
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile.Deposit.QiwiActivity">
+
+    <TextView
+        android:id="@+id/TvAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Amount"
+        android:textColor="@color/colorWhite"
+        android:textSize="16dp" />
+
+    <LinearLayout
+        android:id="@+id/RlAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TvAmt"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:orientation="horizontal"
+        android:background="@color/colorWhite">
+
+        <EditText
+            android:id="@+id/ETAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:inputType="number"
+            android:text="500"
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorWhite"
+            android:textColor="@color/colorBackground"
+            android:textSize="16dp" />
+
+        <Spinner
+            android:id="@+id/SpAmount_Qiwi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:popupBackground="@color/colorBackground"
+            android:layout_centerVertical="true" />
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/Hsv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_below="@+id/RlAmount">
+
+        <RelativeLayout
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/TvAmt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="250 P"
+                android:textSize="14dp"
+                android:padding="4dp"
+                android:background="@drawable/bg_border_white"
+                android:textColor="@color/colorWhite"/>
+
+            <TextView
+                android:id="@+id/TvAmt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500 P"
+                android:textSize="14dp"
+                android:padding="4dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/bg_border_white"
+                android:layout_toRightOf="@+id/TvAmt1"
+                android:textColor="@color/colorWhite"/>
+
+            <TextView
+                android:id="@+id/TvAmt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500 P"
+                android:textSize="14dp"
+                android:padding="4dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/bg_border_white"
+                android:layout_toRightOf="@+id/TvAmt2"
+                android:textColor="@color/colorWhite"/>
+
+            <TextView
+                android:id="@+id/TvAmt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500 P"
+                android:textSize="14dp"
+                android:padding="4dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/bg_border_white"
+                android:layout_toRightOf="@+id/TvAmt3"
+                android:textColor="@color/colorWhite"/>
+
+            <TextView
+                android:id="@+id/TvAmt5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500 P"
+                android:textSize="14dp"
+                android:padding="4dp"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/bg_border_white"
+                android:layout_toRightOf="@+id/TvAmt4"
+                android:textColor="@color/colorWhite"/>
+
+        </RelativeLayout>
+    </HorizontalScrollView>
+
+    <TextView
+        android:id="@+id/Tv_CardInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Hsv"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:text="Payment Info"
+        android:textColor="@color/colorWhite"
+        android:textSize="16dp" />
+
+    <EditText
+        android:id="@+id/Tv_CardNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Tv_CardInfo"
+        android:background="@drawable/bg_border_white"
+        android:hint="Phone number"
+        android:inputType="number"
+        android:maxLength="16"
+        android:padding="10dp"
+        android:layout_marginStart="16dp"
+
+        android:singleLine="true"
+        android:textColor="@color/colorWhite"
+        android:textColorHint="@color/colorWhite"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/btn_Qiwi_Deposit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorGradGreen"
+        android:text="DEPOSIT $ 500.00"
+        android:textColor="@color/colorWhite" />
+
+</RelativeLayout>

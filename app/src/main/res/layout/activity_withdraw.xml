@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile.Withdraw.WithdrawActivity">
+
+
+    <include
+        android:id="@+id/appbar"
+        layout="@layout/layout_appbar"/>
+
+    <TextView
+        android:id="@+id/TVBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="BALANCE"
+        android:layout_below="@id/appbar"
+        android:textColor="@color/colorWhite" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:text="$0.00"
+        android:layout_below="@id/appbar"
+        android:textColor="@color/colorWhite" />
+
+    <TextView
+        android:id="@+id/TvPaymentMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TVBalance"
+        android:layout_margin="8dp"
+        android:text="PAYMENT METHODS"
+        android:textColor="@color/colorWhite" />
+
+    <HorizontalScrollView
+        android:id="@+id/HSV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TvPaymentMode">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:background="@color/colorWhiteTrans"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/IVAdvCardLogo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_advcash" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/IVAdvCardLogo"
+                android:layout_centerHorizontal="true"
+                android:linksClickable="true"
+                android:textColor="@color/colorWhite"
+                android:text="AdvCash USD"
+                android:layout_marginTop="10dp"
+             />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:background="@color/colorWhiteTrans"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/IVNeteller"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_neteller" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/IVNeteller"
+                android:layout_centerHorizontal="true"
+                android:linksClickable="true"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorWhite"
+                android:text="Neteller"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:background="@color/colorWhiteTrans"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/PerfectMoney"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/PerfectMoney"
+                android:layout_centerHorizontal="true"
+                android:linksClickable="true"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorWhite"
+                android:text="PerfectMoney"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+
+            android:background="@color/colorWhiteTrans"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/Qiwi"
+                android:layout_width="50dp"
+                android:layout_marginTop="5dp"
+
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_qiwi" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Qiwi"
+                android:layout_centerHorizontal="true"
+                android:linksClickable="true"
+                android:layout_marginTop="10dp"
+
+                android:textColor="@color/colorWhite"
+                android:text="Qiwi"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:background="@color/colorWhiteTrans"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/Skrill"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_skrill" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Skrill"
+                android:layout_centerHorizontal="true"
+                android:linksClickable="true"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorWhite"
+                android:text="Skrill"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+            android:background="@color/colorWhiteTrans"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/Webmoney_WME"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_webmoney_wme" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Webmoney_WME"
+                android:layout_centerHorizontal="true"
+                android:linksClickable="true"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorWhite"
+                android:text="Webmoney WME"
+                />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:padding="10dp"
+            android:layout_margin="5dp"
+
+            android:background="@color/colorWhiteTrans"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:id="@+id/Wenmoney_WMZ"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="5dp"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/ic_webmoney_wmz" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/Wenmoney_WMZ"
+                android:layout_centerHorizontal="true"
+                android:linksClickable="true"
+                android:layout_marginTop="10dp"
+
+                android:textColor="@color/colorWhite"
+                android:text="Wenmoney WMZ"
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <RelativeLayout
+        android:id="@+id/RL_InsufficientFunds"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_below="@+id/HSV"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgfunds"
+            android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/TVInfunds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/imgfunds"
+            android:text="Insufficient funds"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/TVInfunds"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/imgfunds"
+            android:text="Minimum withdrawal amount is $ 2.00"
+            android:textColor="@color/colorWhite" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RL_InsufficientFunds"
+        android:textColor="@color/colorWhite"
+        android:padding="10dp"
+        android:text="You have no trasaction yet"/>
+
+</RelativeLayout>
