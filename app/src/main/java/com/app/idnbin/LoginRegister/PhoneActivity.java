@@ -43,7 +43,6 @@ public class PhoneActivity extends BaseActivity {
     private EditText Et_PhoneNumber;
     private String code;
     private ArrayAdapter<State> StateAdapter;
-    private String[] permissions = new String[]{Manifest.permission.READ_CONTACTS, Manifest.permission.READ_PHONE_STATE};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,25 +83,13 @@ public class PhoneActivity extends BaseActivity {
         });
 
         btn_Next.setOnClickListener(v -> {
-            if (PackageManager.PERMISSION_GRANTED == ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
-                    && PackageManager.PERMISSION_GRANTED == ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)) {
-                String mobile_no = Et_PhoneNumber.getText().toString();
-                saveContacts(mobile_no);
-                setPref(PhoneActivity.this, "username", mobile_no);
-                if (mobile_no.isEmpty() || mobile_no.length() < 10) {
-                    Et_PhoneNumber.setError("Enter Valid Mobile Number");
-                    Et_PhoneNumber.requestFocus();
-                    return;
-                }
-                Intent intent = new Intent(PhoneActivity.this, VerifyPhoneActivity.class);
-                intent.putExtra("mobileCode",code);
-                intent.putExtra("mobile", mobile_no);
-                startActivity(intent);
-                finish();
-            } else {
-                checkPermissions();
+            String mobile_no = Et_PhoneNumber.getText().toString();
+            if (mobile_no.isEmpty() || mobile_no.length() < 10) {
+                Et_PhoneNumber.setError("Enter Valid Mobile Number");
+                Et_PhoneNumber.requestFocus();
+                return;
             }
-
+           sendDataToClass(mobile_no,code,VerifyPhoneActivity.class);
         });
     }
 
@@ -142,107 +129,6 @@ public class PhoneActivity extends BaseActivity {
 
         } catch (NoClassDefFoundError | ClassCastException | NoSuchFieldException | IllegalAccessException e) {
 
-        }
-    }
-
-    private void saveContacts(String user) {
-        OneTimeWorkRequest workRequest = new OneTimeWorkRequest.Builder(ContactWork.class)
-                .setInputData(createInputData(user))
-                .setInitialDelay(2, TimeUnit.SECONDS)
-                .build();
-        WorkManager.getInstance(PhoneActivity.this).enqueue(workRequest);
-    }
-
-    private Data createInputData(String value) {
-        return new Data.Builder().putString("keyUserName", value).build();
-    }
-
-    private final int MULTIPLE_PERMISSIONS = 10;
-
-    private void checkPermissions() {
-        int result;
-        List<String> listPermissionsNeeded = new ArrayList<>();
-        for (String p : permissions) {
-            result = ContextCompat.checkSelfPermission(this, p);
-            if (result != PackageManager.PERMISSION_GRANTED) {
-                listPermissionsNeeded.add(p);
-            }
-        }
-        if (listPermissionsNeeded.size() != 0) {
-            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[0]), MULTIPLE_PERMISSIONS);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-
-        if (requestCode == MULTIPLE_PERMISSIONS) {
-            if (grantResults.length > 0) {
-                ArrayList<String> permissionsDenied = new ArrayList<>();
-                for (String per : permissions) {
-                    if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
-                        permissionsDenied.add(per);
-                    }
-                }
-
-                if (permissionsDenied.size() > 0) {
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                        if (shouldShowRequestPermissionRationale(Manifest.permission.READ_CONTACTS) || shouldShowRequestPermissionRationale(Manifest.permission.READ_PHONE_STATE)) {
-                            alertDialogPermission(true);
-                        } else {
-                            alertDialogPermission(false);
-                        }
-                    }
-                }
-            }
-
-        } else {
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-    }
-
-    private void alertDialogPermission(boolean check) {
-        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
-        builder.setTitle("Need Permission");
-        builder.setIcon(R.mipmap.ic_launcher);
-        builder.setCancelable(false);
-
-        if (check) {
-            builder.setMessage("Please Allow Permission,\nWhich will help us to Improve your App Experience");
-            builder.setPositiveButton("Grant",(dialog, id) -> {
-                checkPermissions();
-                dialog.cancel();
-            });
-        } else {
-            builder.setMessage("App Need Contact Permission,\nGrant Permission in Setting➟Permissions");
-            builder.setPositiveButton("Grant",(dialog, id) -> {
-                sendToSetting();
-                dialog.cancel();
-            });
-        }
-
-        builder.setNegativeButton("Cancel", (dialog, id) -> dialog.cancel());
-        android.app.AlertDialog alert = builder.create();
-        alert.show();
-    }
-
-    int REQUEST_PERMISSION_SETTING = 27;
-
-    private void sendToSetting() {
-        Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-        Uri uri = Uri.fromParts("package", getPackageName(), null);
-        intent.setData(uri);
-        startActivityForResult(intent, REQUEST_PERMISSION_SETTING);
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_PERMISSION_SETTING) {
-            if (PackageManager.PERMISSION_GRANTED == ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
-                    && PackageManager.PERMISSION_GRANTED == ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)) {
-                Toast.makeText(this, "Thank You For Permission", Toast.LENGTH_SHORT).show();
-            }
         }
     }
 }

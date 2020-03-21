@@ -65,7 +65,7 @@
 
     <string name="password">The password must be atleast 6 character long.include at least one lowercase letter, one uppercase letter, and one number.</string>
     <string name="use_passcode">Use passcode</string>
-    <string name="set_password">SET PASSWORD</string>
+    <string name="set_password">Set passcode</string>
 
     <string-array name="gender_profile">
         <item>Male</item>

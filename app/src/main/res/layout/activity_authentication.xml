@@ -4,8 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainScreen.Profile.Settings.AuthenticationActivity">
+    tools:context=".Profile.Settings.Security.AuthenticationActivity">
 
+    <RelativeLayout
+        android:id="@+id/rlayuout1"
+        android:visibility="gone"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <TextView
         android:id="@+id/TvAuthentication"
         android:layout_width="match_parent"
@@ -52,5 +57,66 @@
         android:background="#1DFFFFFF"
         android:textColor="@color/colorLightGray"
         android:layout_below="@+id/View"/>
+</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlayuout2"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp">
+
+        <TextView
+            android:id="@+id/TvPhoneNumber1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add phone number"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/TvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/verifydesc"
+            android:textSize="14sp"
+            android:textColor="@color/colorLightGray"
+            android:layout_below="@+id/TvPhoneNumber1"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/Til"
+            android:layout_below="@+id/TvDescription"
+            android:layout_marginTop="40dp"
+            android:theme="@style/TextLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/et_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorLightGray"
+                android:inputType="phone"
+                android:maxLength="12"
+                android:hint="Phone number" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/BtnNext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="NEXT"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/bg_greenborder"
+            android:layout_below="@+id/Til"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>

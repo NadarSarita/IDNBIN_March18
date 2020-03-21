@@ -53,7 +53,7 @@ public class VerifyPhoneActivity extends BaseActivity {
         Intent intent = getIntent();
         mobile = intent.getStringExtra("mobile");
         mobileCode = intent.getStringExtra("mobileCode");
-        sendVerificationCode(mobile, mobileCode);
+        sendVerificationCode(mobile, mobileCode,mCallbacks);
         startCounter();
 
         btn_Continue.setOnClickListener(v -> {
@@ -63,13 +63,13 @@ public class VerifyPhoneActivity extends BaseActivity {
                 pinView.requestFocus();
                 return;
             } else {
-                verifyVerificationCode(code);
+                verifyVerificationCode(mAuth,mVerificationId,code,mobile,Cl_Verify);
                 startActivity(new Intent(this, HomeActivity.class));
             }
         });
 
         Tv_ResendCode.setOnClickListener(v -> {
-            sendVerificationCode(mobile, mobileCode);
+            sendVerificationCode(mobile, mobileCode,mCallbacks);
             startCounter();
         });
     }
@@ -89,18 +89,10 @@ public class VerifyPhoneActivity extends BaseActivity {
             }
 
         }.start();
+
+
     }
 
-    private void sendVerificationCode(String mobile, String mobileCode) {
-        PhoneAuthProvider.getInstance().verifyPhoneNumber(
-                mobileCode + mobile,
-                60,
-                TimeUnit.SECONDS,
-                TaskExecutors.MAIN_THREAD,
-                mCallbacks);
-
-        Log.d("FALALA", "Sent");
-    }
 
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
         @Override
@@ -114,7 +106,7 @@ public class VerifyPhoneActivity extends BaseActivity {
             if (code != null) {
                 pinView.setText(code);
                 //verifying the code
-                verifyVerificationCode(code);
+                verifyVerificationCode(mAuth,mVerificationId,code,mobile,Cl_Verify);
             }
         }
 
@@ -140,59 +132,9 @@ public class VerifyPhoneActivity extends BaseActivity {
         updateUI(currentUser);
     }
 
-    private void verifyVerificationCode(String code) {
-        //creating the credential
-        PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, code);
-        phoneLogin(credential);
-    }
-
-    private void updateUI(FirebaseUser currentUser) {
-        if (currentUser != null) {
-            retrieveUserDetail(currentUser);
-        }
-    }
-
-    private void phoneLogin(PhoneAuthCredential credential) {
-        mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(VerifyPhoneActivity.this, task -> {
-                    if (task.isSuccessful()) {
-                        FirebaseUser firebaseUser = mAuth.getCurrentUser();
-                        String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-                        if (firebaseUser != null) {
-                            Log.d("GAHHAA", "" + mobile);
-                            UserDetails user = new UserDetails(firebaseUser.getUid(), firebaseUser.getEmail(), "", "", currentDateTimeString,"");
-                            GlobalConstants.UsersInstance.child(firebaseUser.getUid()).setValue(user);
-                        }
-
-                        if (task.getResult() != null) {
-                            FirebaseUser user = task.getResult().getUser();
-
-                            if (user != null) {
-                                GlobalConstants.UsersInstance.child(user.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-                                    @Override
-                                    public void onDataChange(@NonNull com.google.firebase.database.DataSnapshot dataSnapshot) {
-                                        if (!dataSnapshot.exists()) {
-
-                                            updateUI(user);
-                                        } else {
-                                            updateUI(user);
-                                        }
-                                    }
-
-                                    @Override
-                                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                                    }
-                                });
-                            }
-                        }
 
 
-                    } else {
-                        if (task.getException() != null) {
-                            snackBar(Cl_Verify, "" + task.getException().getMessage());
-                        }
-                    }
-                });
-    }
+
+
+
 }

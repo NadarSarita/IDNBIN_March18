@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "325465749539-eqnr1annmlirp94sufdln8pvn2mit06h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.idnbin",
+            "certificate_hash": "65a6675debeb0c8d8b5b6b7113caa19b74d8f3bf"
+          }
+        },
+        {
+          "client_id": "325465749539-va87efl8art08v8kr90s78lvl4vkhin2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.app.idnbin",
+            "certificate_hash": "1e9bb97c47f1f36a3069b8818c7e88497d40c3a1"
+          }
+        },
+        {
           "client_id": "325465749539-l8ck8aifsv8ukk46en46uqk6gem9d2eq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -76,7 +92,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "325465749539-00eadcp3h6ijn3djnnnd6drd71n2gm4r.apps.googleusercontent.com",
+              "client_id": "325465749539-kjg4ooh90lnkk6ad7f5q3dte0lndlgqd.apps.googleusercontent.com",
               "client_type": 3
             },
             {
